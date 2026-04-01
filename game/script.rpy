@@ -333,26 +333,34 @@ label educational_summary:
     scene bg final_screen
     show alaise at talk, center, alaise
     if good_ending:
+        voice "audio/voice_alaise/при деньгах.mp3"
         g "Ну что, дорогуша, как прошли твои цифровые приключения? Надеюсь, ты еще при деньгах и с целыми нервами!"
     else:
+        voice "audio/voice_alaise/осторожнее.mp3"
         g "Ну что, дорогуша, как прошли твои цифровые приключения? Тебе стоило бы действовать осторожнее!"
     hide alaise
     show alaise2 at talk, center, alaise1
+    voice "audio/voice_alaise/золотые правила.mp3"
     g "Позволь мне, твоей верной наставнице, разобрать этот хаос по полочкам. Мошенники — те еще драматические актеры, но мы-то с тобой зрители искушенные, верно?  Чтобы в следующий раз они ушли со сцены под свист, запомни эти золотые правила:"
     hide alaise2
-    show alaise3 at talk, center, alaise1
+    show alaise3 at talk, center, alaise
+    voice "audio/voice_alaise/правило 1.mp3"
     g "1. Тише едешь — деньги будут! Заметил, как они кричали: «СРОЧНО!»? Это их любимый трюк, чтобы ты отключил мозг и включил панику."
     hide alaise3
     show alaise at talk, center, alaise
+    voice "audio/voice_alaise/2 (2).mp3"
     g "2. Смотри в «паспорт» письма. Если адрес отправителя похож на винегрет из букв вроде .xyz или fed-security-verify.com — это фальшивка. Настоящий банк не прячется за странными доменами."
     hide alaise
     show alaise2 at talk, center, alaise1
+    voice "audio/voice_alaise/3.mp3"
     g "3. Твои секреты — только твои. Запомни как мантру: сотрудники банка никогда, слышишь, никогда не спросят твой CVV или код из SMS. Если просят — смело жми «отбой»."
     hide alaise2
-    show alaise3 at talk, center, alaise1
+    show alaise3 at talk, center, alaise
+    voice "audio/voice_alaise/4.mp3"
     g "4. Официальный путь — самый короткий. Сомневаешься? Не тыкай в подозрительные кнопки. Просто зайди в официальное приложение или набери номер с оборота своей карты. Это всегда работает безотказно!"
     hide alaise3
     show alaise at talk, center, alaise
+    voice "audio/voice_alaise/не расслабляйся.mp3"
     g "Ну что, теперь ты чувствуешь себя чуть-чуть кибер-гением?  Не расслабляйся, впереди еще много интересного!"
     return
 
