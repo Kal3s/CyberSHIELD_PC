@@ -8,17 +8,26 @@ image bg screen_for_dialogue = "images/lvl1/bg dialog.png"
 image bg zvonok = "images/lvl1/zvonok.png"
 image bg plachet = "images/lvl1/bg plachet.jpg"
 image bg screen_kostya_govorit_po_telefonu = "images/lvl1/bg razgovor po tel.jpg"
+
 image bg office_hall = "images/lvl2/bg_hall.png"        # Холл бизнес-центра
 image bg wifi_menu = "images/lvl2/bg_wifi.png"          # Экран со списком сетей
 image bg laptop_screen = "images/lvl2/bg_laptop.png"
 image bg office = "images/lvl2/bg_office.png"
 image bg office sad = "images/lvl2/bg_office_sad.png"
+image bg office cry = "images/lvl2/bg_office_cry.png"
 image bg time = "images/lvl2/bg_time.png"
 image bg error = "images/lvl2/erorr.png"
+image bg login = "images/lvl2/login i parol.png"
+image bg podoz_act = "images/lvl2/podozritelnays act.png"
 image bg sertifikat = "images/lvl2/sertifikat.png"
+image bg smena_parolya = "images/lvl2/smena parolya.png"
 image bg svoistva = "images/lvl2/svoistva.png"
 image bg talk_with_woman = "images/lvl2/talk with woman.PNG"
+image bg vhod_s_drugogo = "images/lvl2/vhod s drugogo.png"
 image bg wifi otkl = "images/lvl2/wifi otkl.png"
+image bg wifi vkl = "images/lvl2/wifi vkl.png"
+image bg zagruzka_saita = "images/lvl2/zagruzka saita.png"
+image bg adress_saita = "images/lvl2/adress saita.jpg"
 
 # Персонажи
 image screem = "images/lvl1/screem.png"
@@ -371,19 +380,22 @@ label wifi:
     play music "audio/In The Morning - The Grey Room _ Clark Sims.mp3" fadein 2.0
     scene bg office_hall
     
+    voice "audio/voice_dima/Моя запись 1.m4a.mp3"
     d "Так… спокойно. Сегодня я либо получаю работу… либо получаю новый опыт под названием «как не надо ходить на собеседования»."
     
     scene bg time
     "Дима смотрит на часы."
+    voice "audio/voice_dima/Моя запись 2.m4a.mp3"
     d "20 минут. Времени вроде много… но если я сейчас сяду в TikTok — всё, можно сразу идти домой."
     
     scene bg office
     "Садится, достаёт ноутбук."
-    d "Так, презентация… где ты…"
-    
-    d "…а где интернет?"
+    scene bg laptop_screen
+    voice "audio/voice_dima/Моя запись 3.m4a.mp3"
+    d "Так, презентация… где ты… а где интернет?"
     
     scene bg wifi_menu
+    voice "audio/voice_dima/Моя запись 4.m4a.mp3"
     d "О, три сети. Классика жанра."
     
     menu:
@@ -398,80 +410,94 @@ label wifi:
 
 # --- ВЕТКА 2А: Открытая сеть ---
 label branch_open_wifi:
+    voice "audio/voice_dima/Моя запись 6.m4a.mp3"
     d "Ого. Ни пароля, ни вопросов… даже мама так быстро не пускает домой."
+    voice "audio/voice_dima/Моя запись 7.m4a.mp3"
     d "Ладно, времени мало. Погнали."
     
-    scene bg laptop_screen
+    scene bg login
     "Дима открывает облако."
-    s "Введите логин и пароль..."
     
-    menu:
-        "Ввести данные":
-            d "Ну а что тут может пойти не так? Я же просто зайду…"
-            "Через пару секунд на телефон падает уведомление."
-            s "Вход выполнен с нового устройства."
-            d "…подождите. Это что за второе я? Я вроде один пришёл…"
-            
-            menu:
-                "Игнорировать":
-                    d "Да ну, баг какой-то. Сейчас всё само пройдёт."
-                    "..."
-                    d "Если игнорировать проблемы — они же исчезают, да? Да?.."
-                    s "Внимание: Подозрительная активность."
-                    d "Ну вот. Проблема не исчезла. Она прокачалась."
-                    $ wifi_score = 0
-                    jump educational_summary2
-                
-                "Сменить пароль":
-                    d "Так, без паники. Я взрослый человек… сейчас что-нибудь нажму правильно."
-                    "Лихорадочно меняет пароль через мобильный интернет."
-                    d "Фух. Сердце бьётся как будто я не пароль меняю, а экзамен сдаю."
-                    $ wifi_score = 1
-                    jump educational_summary2
-                    
-                "Отключить Wi-Fi":
-                    d "Нет, стоп. Мне это не нравится."
-                    "Выключает Wi-Fi."
-                    d "Так… а если уже поздно?.."
-                    $ wifi_score = 1
-                    jump educational_summary2
+    voice "audio/voice_dima/Моя запись 8.m4a.mp3"
+    d "Ну а что тут может пойти не так? Я же просто зайду…"
+    scene bg vhod_s_drugogo
+    "Через пару секунд на телефон падает уведомление."
 
-        "Проверить сайт":
-            d "Так, секунду. Я вообще куда захожу?"
-            d "Так… это что за домен? Это не выглядит как нормальный сайт."
-            d "Это больше похоже на 'my-real-bank-no-scam.ru'"
+    voice "audio/voice_system/1.mp3"
+    s "Вход выполнен с нового устройства."
+
+    scene bg_office_sad
+    voice "audio/voice_dima/Моя запись 9.m4a.mp3"
+    d "…подождите. Это что за второе я? Я вроде один пришёл…"
             
-            menu:
-                "Всё равно войти":
-                    d "Ладно, может я просто параноик…"
-                    $ wifi_score = 0
-                    jump educational_summary2
+    menu:
+        "Игнорировать":
+            scene bg office
+            voice "audio/voice_dima/Моя запись 10.m4a.mp3"
+            d "Да ну, баг какой-то. Сейчас всё само пройдёт."
+            "..."
+            voice "audio/voice_dima/Моя запись 11.m4a.mp3"
+            d "Если игнорировать проблемы — они же исчезают, да? Да?.."
+            voice "audio/voice_system/2.mp3"
+            s "Внимание: Подозрительная активность."
+            scene bg office cry
+            voice "audio/voice_dima/Моя запись 12.m4a.mp3"
+            d "Ну вот. Проблема не исчезла. Она прокачалась."
+            $ wifi_score = 0
+            jump educational_summary2
                 
-                "Не вводить данные":
-                    d "Не, спасибо. Я ещё пожить хочу спокойно."
-                    jump branch_secure_wifi # Возвращаем к выбору безопасной сети
+        "Сменить пароль":
+            scene bg office
+            voice "audio/voice_dima/Моя запись 13.m4a.mp3"
+            d "Так, без паники. Я взрослый человек… сейчас что-нибудь нажму правильно."
+            scene bg smena_parolya
+            "Лихорадочно меняет пароль через мобильный интернет."
+            scene bg office sad
+            voice "audio/voice_dima/Моя запись 14.m4a.mp3"
+            d "Фух. Сердце бьётся как будто я не пароль меняю, а экзамен сдаю."
+            $ wifi_score = 1
+            jump educational_summary2
+                    
+        "Отключить Wi-Fi":
+            scene bg office
+            voice "audio/voice_dima/Моя запись 16.m4a.mp3"
+            d "Нет, стоп. Мне это не нравится."
+            scene bg wifi otkl
+            "Выключает Wi-Fi."
+            scene bg office sad
+            voice "audio/voice_dima/Моя запись 22.m4a.mp3"
+            d "Не, спасибо. Я ещё пожить хочу спокойно. Попробую подключится к запароленной сети."
+            $ wifi_score = 1
+            jump branch_secure_wifi
 
 # --- ВЕТКА 2Б: Безопасная сеть ---
 label branch_secure_wifi:
-    "Дима подошел спросить пароль от Wi-Fi"
     scene bg talk_with_woman
+    "Дима подошел спросить пароль от Wi-Fi"
+    
+    scene bg office
+    voice "audio/voice_dima/Моя запись 28.m4a.mp3"
     d "Пароль есть — уже плюс. Значит, не совсем дикий запад."
     
     menu:
         "Сразу зайти в облако":
+            scene bg login
+            voice "audio/voice_dima/Моя запись 30.m4a.mp3"
             d "Да всё нормально, не первый день в интернете."
-            "Работает. Значит всё ок… наверное."
+            voice "audio/voice_dima/Моя запись 31.m4a.mp3"
+            d "Работает. Значит всё ок… наверное."
             $ wifi_score = 1
             jump educational_summary2
             
         "Проверить наличие HTTPS":
-            d "Так, замочек есть… https на месте…"
-            d "Вот теперь я спокоен. Даже немного горжусь собой."
+            scene bg login
+            voice "audio/voice_dima/Моя запись 32.m4a.mp3"
+            d "Так, замочек есть… https на месте… Вот теперь я спокоен."
             $ wifi_score = 2
             jump educational_summary2
             
         "Использовать мобильный интернет":
-            d "Знаешь что… я не настолько доверяю этому месту."
+            voice "audio/voice_dima/Моя запись 34.m4a.mp3"
             d "Медленно, зато спокойно. Как бабушка в очереди — но надёжно."
             $ wifi_score = 2
             $ good_ending = True
@@ -479,24 +505,30 @@ label branch_secure_wifi:
 
 # --- ВЕТКА 2В: Фальшивая сеть ---
 label branch_fake_wifi:
+    voice "audio/voice_dima/Моя запись 35.m4a.mp3"
     d "Сигнал идеальный… слишком идеальный."
-    scene bg laptop_screen
+    scene bg sertifikat
+    voice "audio/voice_system/3.mp3"
     s "Для доступа к интернету скачайте и установите сертификат безопасности."
     
     menu:
         "Скачать сертификат":
             scene bg sertifikat
+            voice "audio/voice_dima/Моя запись 37.m4a.mp3"
             d "Ну ладно… попробую."
             scene bg error
             "Устройство начинает тормозить. Появляются странные окна."
-            scene bg_office_sad
+            scene bg_office_cry
+            voice "audio/voice_dima/Моя запись 38.m4a.mp3"
             d "Так… это было плохое решение. Очень плохое. Прямо как мои решения в 3 ночи."
             $ wifi_score = 0
             jump educational_summary2
             
         "Спросить сотрудника":
             scene bg talk_with_woman
+            voice "audio/voice_system/4.mp3"
             st "Такой сети у нас нет. Рекомендую использовать BC_Guest_WPA2."
+            voice "audio/voice_dima/Моя запись 39.m4a.mp3"
             d "Ну всё ясно. Бесплатный сыр найден."
             jump branch_secure_wifi
 
@@ -534,6 +566,7 @@ label educational_summary2:
     show alaise3 at talk, center, alaise
     g "И главное — если что-то кажется подозрительным…"
     
+    voice "audio/voice_dima/Моя запись 42.m4a.mp3"
     d "…то это не паранойя?"
     
     hide alaise3
