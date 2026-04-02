@@ -539,31 +539,40 @@ label educational_summary2:
     
     if wifi_score == 0:
         show alaise at talk, center, alaise
+        voice "audio/voice_alaise/- данные курс димки.mp3"
         g "Ну что, Дима… ты сейчас прошёл экспресс-курс «Как потерять данные за 10 минут»."
+        voice "audio/voice_alaise/оп а второй раз вполне.mp3"
         g "Но не переживай. Все через это проходят… один раз. Ну максимум два."
     
     elif wifi_score == 1:
         show alaise at talk, center, alaise
+        voice "audio/voice_alaise/опасный бро.mp3"
         g "Ну… было пару опасных моментов, Дима. Но ты хотя бы вовремя остановился. Это уже половина успеха."
         
     else:
         show alaise at talk, center, alaise
+        voice "audio/voice_alaise/а мне не нравится.mp3"
         g "О, да ты осторожный! Мне нравится. Таких пользователей мошенники обычно обходят стороной."
 
     hide alaise
     show alaise2 at talk, center, alaise1
+    voice "audio/voice_alaise/выживалово.mp3"
     g "Запомни правила выживания в открытых сетях:"
     hide alaise2
     show alaise3 at talk, center, alaise
+    voice "audio/voice_alaise/трафик рафик.mp3"
     g "1. Открытый Wi-Fi — это проходной двор. Любой в этой сети может попытаться «подсмотреть» твой трафик."
     hide alaise3
     show alaise at talk, center, alaise
+    voice "audio/voice_alaise/правило двэ.mp3"
     g "2. Никогда не скачивай «сертификаты» или «обновления» для подключения к Wi-Fi. Это прямой путь для вируса."
     hide alaise
     show alaise2 at talk, center, alaise1
+    voice "audio/voice_alaise/правило 4-1.mp3"
     g "3. Если нужно зайти в банк или почту — лучше раздай интернет с телефона. Это в сто раз безопаснее."
     hide alaise2
     show alaise3 at talk, center, alaise
+    voice "audio/voice_alaise/да дай договорить.mp3"
     g "И главное — если что-то кажется подозрительным…"
     
     voice "audio/voice_dima/Моя запись 42.m4a.mp3"
@@ -571,6 +580,7 @@ label educational_summary2:
     
     hide alaise3
     show alaise at talk, center, alaise
+    voice "audio/voice_alaise/смыслый здравл.mp3"
     g "Нет. Это здравый смысл!"
     
     return
