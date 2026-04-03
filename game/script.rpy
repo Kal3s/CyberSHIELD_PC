@@ -342,34 +342,34 @@ label educational_summary:
     scene bg final_screen
     show alaise at talk, center, alaise
     if good_ending:
-        voice "audio/voice_alaise/при деньгах.mp3"
+        voice "audio/voice_alaise/1.mp3"
         g "Ну что, дорогуша, как прошли твои цифровые приключения? Надеюсь, ты еще при деньгах и с целыми нервами!"
     else:
-        voice "audio/voice_alaise/осторожнее.mp3"
+        voice "audio/voice_alaise/2.mp3"
         g "Ну что, дорогуша, как прошли твои цифровые приключения? Тебе стоило бы действовать осторожнее!"
     hide alaise
     show alaise2 at talk, center, alaise1
-    voice "audio/voice_alaise/золотые правила.mp3"
+    voice "audio/voice_alaise/3.mp3"
     g "Позволь мне, твоей верной наставнице, разобрать этот хаос по полочкам. Мошенники — те еще драматические актеры, но мы-то с тобой зрители искушенные, верно?  Чтобы в следующий раз они ушли со сцены под свист, запомни эти золотые правила:"
     hide alaise2
     show alaise3 at talk, center, alaise
-    voice "audio/voice_alaise/правило 1.mp3"
+    voice "audio/voice_alaise/4.mp3"
     g "1. Тише едешь — деньги будут! Заметил, как они кричали: «СРОЧНО!»? Это их любимый трюк, чтобы ты отключил мозг и включил панику."
     hide alaise3
     show alaise at talk, center, alaise
-    voice "audio/voice_alaise/2 (2).mp3"
+    voice "audio/voice_alaise/5.mp3"
     g "2. Смотри в «паспорт» письма. Если адрес отправителя похож на винегрет из букв вроде .xyz или fed-security-verify.com — это фальшивка. Настоящий банк не прячется за странными доменами."
     hide alaise
     show alaise2 at talk, center, alaise1
-    voice "audio/voice_alaise/3.mp3"
+    voice "audio/voice_alaise/6.mp3"
     g "3. Твои секреты — только твои. Запомни как мантру: сотрудники банка никогда, слышишь, никогда не спросят твой CVV или код из SMS. Если просят — смело жми «отбой»."
     hide alaise2
     show alaise3 at talk, center, alaise
-    voice "audio/voice_alaise/4.mp3"
+    voice "audio/voice_alaise/7.mp3"
     g "4. Официальный путь — самый короткий. Сомневаешься? Не тыкай в подозрительные кнопки. Просто зайди в официальное приложение или набери номер с оборота своей карты. Это всегда работает безотказно!"
     hide alaise3
     show alaise at talk, center, alaise
-    voice "audio/voice_alaise/не расслабляйся.mp3"
+    voice "audio/voice_alaise/8.mp3"
     g "Ну что, теперь ты чувствуешь себя чуть-чуть кибер-гением?  Не расслабляйся, впереди еще много интересного!"
     return
 
@@ -380,22 +380,22 @@ label wifi:
     play music "audio/In The Morning - The Grey Room _ Clark Sims.mp3" fadein 2.0
     scene bg office_hall
     
-    voice "audio/voice_dima/Моя запись 1.m4a.mp3"
+    voice "audio/voice_dima/1.mp3"
     d "Так… спокойно. Сегодня я либо получаю работу… либо получаю новый опыт под названием «как не надо ходить на собеседования»."
     
     scene bg time
     "Дима смотрит на часы."
-    voice "audio/voice_dima/Моя запись 2.m4a.mp3"
+    voice "audio/voice_dima/2.mp3"
     d "20 минут. Времени вроде много… но если я сейчас сяду в TikTok — всё, можно сразу идти домой."
     
     scene bg office
     "Садится, достаёт ноутбук."
     scene bg laptop_screen
-    voice "audio/voice_dima/Моя запись 3.m4a.mp3"
+    voice "audio/voice_dima/3.mp3"
     d "Так, презентация… где ты… а где интернет?"
     
     scene bg wifi_menu
-    voice "audio/voice_dima/Моя запись 4.m4a.mp3"
+    voice "audio/voice_dima/4.mp3"
     d "О, три сети. Классика жанра."
     
     menu:
@@ -410,15 +410,15 @@ label wifi:
 
 # --- ВЕТКА 2А: Открытая сеть ---
 label branch_open_wifi:
-    voice "audio/voice_dima/Моя запись 6.m4a.mp3"
+    voice "audio/voice_dima/6.mp3"
     d "Ого. Ни пароля, ни вопросов… даже мама так быстро не пускает домой."
-    voice "audio/voice_dima/Моя запись 7.m4a.mp3"
+    voice "audio/voice_dima/7.mp3"
     d "Ладно, времени мало. Погнали."
     
     scene bg login
     "Дима открывает облако."
     
-    voice "audio/voice_dima/Моя запись 8.m4a.mp3"
+    voice "audio/voice_dima/8.mp3"
     d "Ну а что тут может пойти не так? Я же просто зайду…"
     scene bg vhod_s_drugogo
     "Через пару секунд на телефон падает уведомление."
@@ -427,45 +427,45 @@ label branch_open_wifi:
     s "Вход выполнен с нового устройства."
 
     scene bg_office_sad
-    voice "audio/voice_dima/Моя запись 9.m4a.mp3"
+    voice "audio/voice_dima/9.mp3"
     d "…подождите. Это что за второе я? Я вроде один пришёл…"
             
     menu:
         "Игнорировать":
             scene bg office
-            voice "audio/voice_dima/Моя запись 10.m4a.mp3"
+            voice "audio/voice_dima/10.mp3"
             d "Да ну, баг какой-то. Сейчас всё само пройдёт."
             "..."
-            voice "audio/voice_dima/Моя запись 11.m4a.mp3"
+            voice "audio/voice_dima/11.mp3"
             d "Если игнорировать проблемы — они же исчезают, да? Да?.."
             voice "audio/voice_system/2.mp3"
             s "Внимание: Подозрительная активность."
             scene bg office cry
-            voice "audio/voice_dima/Моя запись 12.m4a.mp3"
+            voice "audio/voice_dima/12.mp3"
             d "Ну вот. Проблема не исчезла. Она прокачалась."
             $ wifi_score = 0
             jump educational_summary2
                 
         "Сменить пароль":
             scene bg office
-            voice "audio/voice_dima/Моя запись 13.m4a.mp3"
+            voice "audio/voice_dima/13.mp3"
             d "Так, без паники. Я взрослый человек… сейчас что-нибудь нажму правильно."
             scene bg smena_parolya
             "Лихорадочно меняет пароль через мобильный интернет."
             scene bg office sad
-            voice "audio/voice_dima/Моя запись 14.m4a.mp3"
+            voice "audio/voice_dima/14.mp3"
             d "Фух. Сердце бьётся как будто я не пароль меняю, а экзамен сдаю."
             $ wifi_score = 1
             jump educational_summary2
                     
         "Отключить Wi-Fi":
             scene bg office
-            voice "audio/voice_dima/Моя запись 16.m4a.mp3"
+            voice "audio/voice_dima/16.mp3"
             d "Нет, стоп. Мне это не нравится."
             scene bg wifi otkl
             "Выключает Wi-Fi."
             scene bg office sad
-            voice "audio/voice_dima/Моя запись 22.m4a.mp3"
+            voice "audio/voice_dima/22.mp3"
             d "Не, спасибо. Я ещё пожить хочу спокойно. Попробую подключится к запароленной сети."
             $ wifi_score = 1
             jump branch_secure_wifi
@@ -476,28 +476,28 @@ label branch_secure_wifi:
     "Дима подошел спросить пароль от Wi-Fi"
     
     scene bg office
-    voice "audio/voice_dima/Моя запись 28.m4a.mp3"
+    voice "audio/voice_dima/28.mp3"
     d "Пароль есть — уже плюс. Значит, не совсем дикий запад."
     
     menu:
         "Сразу зайти в облако":
             scene bg login
-            voice "audio/voice_dima/Моя запись 30.m4a.mp3"
+            voice "audio/voice_dima/30.mp3"
             d "Да всё нормально, не первый день в интернете."
-            voice "audio/voice_dima/Моя запись 31.m4a.mp3"
+            voice "audio/voice_dima/31.mp3"
             d "Работает. Значит всё ок… наверное."
             $ wifi_score = 1
             jump educational_summary2
             
         "Проверить наличие HTTPS":
             scene bg login
-            voice "audio/voice_dima/Моя запись 32.m4a.mp3"
+            voice "audio/voice_dima/32.mp3"
             d "Так, замочек есть… https на месте… Вот теперь я спокоен."
             $ wifi_score = 2
             jump educational_summary2
             
         "Использовать мобильный интернет":
-            voice "audio/voice_dima/Моя запись 34.m4a.mp3"
+            voice "audio/voice_dima/34.mp3"
             d "Медленно, зато спокойно. Как бабушка в очереди — но надёжно."
             $ wifi_score = 2
             $ good_ending = True
@@ -505,7 +505,7 @@ label branch_secure_wifi:
 
 # --- ВЕТКА 2В: Фальшивая сеть ---
 label branch_fake_wifi:
-    voice "audio/voice_dima/Моя запись 35.m4a.mp3"
+    voice "audio/voice_dima/35.mp3"
     d "Сигнал идеальный… слишком идеальный."
     scene bg sertifikat
     voice "audio/voice_system/3.mp3"
@@ -514,12 +514,12 @@ label branch_fake_wifi:
     menu:
         "Скачать сертификат":
             scene bg sertifikat
-            voice "audio/voice_dima/Моя запись 37.m4a.mp3"
+            voice "audio/voice_dima/37.mp3"
             d "Ну ладно… попробую."
             scene bg error
             "Устройство начинает тормозить. Появляются странные окна."
             scene bg_office_cry
-            voice "audio/voice_dima/Моя запись 38.m4a.mp3"
+            voice "audio/voice_dima/38.mp3"
             d "Так… это было плохое решение. Очень плохое. Прямо как мои решения в 3 ночи."
             $ wifi_score = 0
             jump educational_summary2
@@ -528,7 +528,7 @@ label branch_fake_wifi:
             scene bg talk_with_woman
             voice "audio/voice_system/4.mp3"
             st "Такой сети у нас нет. Рекомендую использовать BC_Guest_WPA2."
-            voice "audio/voice_dima/Моя запись 39.m4a.mp3"
+            voice "audio/voice_dima/39.mp3"
             d "Ну всё ясно. Бесплатный сыр найден."
             jump branch_secure_wifi
 
@@ -539,48 +539,48 @@ label educational_summary2:
     
     if wifi_score == 0:
         show alaise at talk, center, alaise
-        voice "audio/voice_alaise/- данные курс димки.mp3"
+        voice "audio/voice_alaise/9.mp3"
         g "Ну что, Дима… ты сейчас прошёл экспресс-курс «Как потерять данные за 10 минут»."
-        voice "audio/voice_alaise/оп а второй раз вполне.mp3"
+        voice "audio/voice_alaise/10.mp3"
         g "Но не переживай. Все через это проходят… один раз. Ну максимум два."
     
     elif wifi_score == 1:
         show alaise at talk, center, alaise
-        voice "audio/voice_alaise/опасный бро.mp3"
+        voice "audio/voice_alaise/11.mp3"
         g "Ну… было пару опасных моментов, Дима. Но ты хотя бы вовремя остановился. Это уже половина успеха."
         
     else:
         show alaise at talk, center, alaise
-        voice "audio/voice_alaise/а мне не нравится.mp3"
+        voice "audio/voice_alaise/12.mp3"
         g "О, да ты осторожный! Мне нравится. Таких пользователей мошенники обычно обходят стороной."
 
     hide alaise
     show alaise2 at talk, center, alaise1
-    voice "audio/voice_alaise/выживалово.mp3"
+    voice "audio/voice_alaise/13.mp3"
     g "Запомни правила выживания в открытых сетях:"
     hide alaise2
     show alaise3 at talk, center, alaise
-    voice "audio/voice_alaise/трафик рафик.mp3"
+    voice "audio/voice_alaise/14.mp3"
     g "1. Открытый Wi-Fi — это проходной двор. Любой в этой сети может попытаться «подсмотреть» твой трафик."
     hide alaise3
     show alaise at talk, center, alaise
-    voice "audio/voice_alaise/правило двэ.mp3"
+    voice "audio/voice_alaise/15.mp3"
     g "2. Никогда не скачивай «сертификаты» или «обновления» для подключения к Wi-Fi. Это прямой путь для вируса."
     hide alaise
     show alaise2 at talk, center, alaise1
-    voice "audio/voice_alaise/правило 4-1.mp3"
+    voice "audio/voice_alaise/16.mp3"
     g "3. Если нужно зайти в банк или почту — лучше раздай интернет с телефона. Это в сто раз безопаснее."
     hide alaise2
     show alaise3 at talk, center, alaise
-    voice "audio/voice_alaise/да дай договорить.mp3"
+    voice "audio/voice_alaise/17.mp3"
     g "И главное — если что-то кажется подозрительным…"
     
-    voice "audio/voice_dima/Моя запись 42.m4a.mp3"
+    voice "audio/voice_dima/42.mp3"
     d "…то это не паранойя?"
     
     hide alaise3
     show alaise at talk, center, alaise
-    voice "audio/voice_alaise/смыслый здравл.mp3"
+    voice "audio/voice_alaise/18.mp3"
     g "Нет. Это здравый смысл!"
     
     return
